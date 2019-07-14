@@ -20,6 +20,10 @@ Plugin 'vim-scripts/bufexplorer.zip'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'vim-scripts/mru.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => A code-completion engine for Vim 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'ycm-core/YouCompleteMe'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Distraction-free writing 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'junegunn/goyo.vim'
@@ -112,9 +116,9 @@ Plugin 'jiangmiao/auto-pairs'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'chr4/nginx.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => A code-completion engine for Vim 
+" => Toggles between hybrid and absolute line numbers automatically
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'ycm-core/YouCompleteMe'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -271,6 +275,7 @@ let g:go_fmt_command = "goimports"
 " => NLKNguyen/papercolor-theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax enable
+set cursorline
 syntax on
 set background=dark
 colorscheme PaperColor
@@ -303,7 +308,7 @@ let g:ale_lint_on_save = 1
 " => YouCompleteMe settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ycm_min_num_of_chars_for_completion=1
-let g:ycm_cache_omnifunc=0
+let g:ycm_cache_omnifunc=1
 let g:ycm_seed_identifiers_with_syntax=1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
@@ -311,7 +316,12 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_python_binary_path = 'python3'
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_global_ycm_extra_conf = '$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 " Vim's autocomplete is excruciatingly slow
 " http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
-set complete-=i
+"set complete-=i
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => jeffkreeftmeijer/vim-numbertoggle
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set number relativenumber
