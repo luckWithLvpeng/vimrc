@@ -36,6 +36,10 @@ Plugin 'rking/ag.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'Yggdroot/LeaderF'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'airblade/vim-gitgutter'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A tree explorer plugin for vim. 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'scrooloose/nerdtree'
@@ -55,6 +59,10 @@ Plugin 'tpope/vim-surround'
 " => A light and configurable statusline/tabline plugin for Vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'itchyny/lightline.vim'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ALE indicator for the lightline vim plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'maximbaz/lightline-ale'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Go development plugin for Vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,6 +87,34 @@ Plugin 'michaeljsmith/vim-indent-object'
 " => precision color scheme for multiple applications (terminal, vim, etc.) with both dark/light modes 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'NLKNguyen/papercolor-theme'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Open file under cursor when pressing gf 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'amix/open_file_under_cursor.vim'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => syntax highlighting and filetype plugins for Markdown
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'tpope/vim-markdown'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Brings physics-based smooth scrolling to the Vim world!
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'yuttie/comfortable-motion.vim'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Flake8 plugin for Vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'nvie/vim-flake8'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim plugin, insert or delete brackets, parens, quotes in pair
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'jiangmiao/auto-pairs'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim plugin for Nginx
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'chr4/nginx.vim'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => A code-completion engine for Vim 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -97,8 +133,49 @@ map <leader>o :BufExplorer<cr>
 " => MRU plugin
 """"""""""""""""""""""""""""""
 let MRU_Max_Entries = 400
-map <leader>f :MRU<CR>
+map <leader>r :MRU<CR>
 
+""""""""""""""""""""""""""""""
+" => LeaderF
+""""""""""""""""""""""""""""""
+let g:Lf_ShortcutF = '<c-p>'
+" find functions
+noremap <Leader>ff :LeaderfFunctionAll<cr>
+" find buffer
+noremap <Leader>fb :LeaderfBuffer<cr>
+" find tags
+noremap <Leader>ft :LeaderfBufTagAll<cr>
+noremap <Leader>fm :LeaderfMruCwd<cr>
+" find line has string
+noremap <Leader>fl :LeaderfLineAll<cr>
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }
 
 
 """"""""""""""""""""""""""""""
@@ -200,7 +277,7 @@ colorscheme PaperColor
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Syntastic (syntax checker)
+" => ale Syntastic (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
 \   'javascript': ['jshint'],
@@ -213,7 +290,28 @@ nmap <silent> <leader>a <Plug>(ale_next_wrap)
 " Disabling highlighting
 let g:ale_set_highlights = 0
 
+let g:ale_sign_column_always = 0
 " Only run linting when saving the file
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
+let g:ale_lint_on_save = 1
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => YouCompleteMe settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ycm_min_num_of_chars_for_completion=1
+let g:ycm_cache_omnifunc=0
+let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_python_binary_path = 'python3'
+let g:ycm_show_diagnostics_ui = 0
+" Vim's autocomplete is excruciatingly slow
+" http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
+set complete-=i
 
