@@ -1,4 +1,4 @@
-source ~/.vim/basic.vim
-source ~/.vim/filetypes.vim
-source ~/.vim/plugins.vim
-source ~/.vim/extended.vim
+source ~/.vim/vimrc/basic.vim
+source ~/.vim/vimrc/filetypes.vim
+source ~/.vim/vimrc/plugins.vim
+source ~/.vim/vimrc/extended.vim
