@@ -8,7 +8,7 @@
   # clone 
   git clone git@github.com:float90/vimrc.git ~/.vim/vimrc
   # creat .vimrc
-  ln -s ~/.vim/vimrc/vimrc.vim .vimrc
+  ln -s ~/.vim/vimrc/vimrc.vim ~/.vimrc
   # Brief help
   # :PluginList       - lists configured plugins
   # :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
