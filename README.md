@@ -10,6 +10,9 @@
   git clone git@github.com:float90/vimrc.git ~/.vim/vimrc
   # creat .vimrc
   ln -s ~/.vim/vimrc/vimrc.vim ~/.vimrc
+  #vim command
+  #CocInstall coc-json
+  ln -s ~/.vim/vimrc/coc-settings.json ~/.vim/coc-settings.json
 ```
 
 ### Commands
