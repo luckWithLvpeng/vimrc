@@ -334,10 +334,11 @@ colorscheme PaperColor
 " => jeffkreeftmeijer/vim-numbertoggle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number relativenumber
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => neoclide/coc.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
