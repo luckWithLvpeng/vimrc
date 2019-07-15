@@ -1,127 +1,125 @@
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/bundle')
+" Make sure you use single quotes
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => let Vundle manage Vundle, required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Buffer Explorer / Browser
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'vim-scripts/bufexplorer.zip'
+Plug 'vim-scripts/bufexplorer.zip'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin to manage Most Recently Used (MRU) files 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'vim-scripts/mru.vim'
+Plug 'vim-scripts/mru.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A code-completion engine for Vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Distraction-free writing 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A Vim extension that emulates iA Writer environment when editing Markdown, reStructuredText or text files 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'amix/vim-zenroom2'
+Plug 'amix/vim-zenroom2'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim plugin for the_silver_searcher, 'ag' 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'rking/ag.vim'
+Plug 'rking/ag.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => This plugin is mainly used for locating files, buffers, mrus, ctags, gtags, etc. in large project 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'Yggdroot/LeaderF'
+Plug 'Yggdroot/LeaderF'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A tree explorer plugin for vim. 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A plugin of NERDTree showing git status
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => True Sublime Text style multiple selections for Vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => surround.vim: quoting/parenthesizing made simple  
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A light and configurable statusline/tabline plugin for Vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => ALE indicator for the lightline vim plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'maximbaz/lightline-ale'
+Plug 'maximbaz/lightline-ale'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Go development plugin for Vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => commentary.vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " =>  allows you to visually select increasingly larger regions of text using the same key combination 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'terryma/vim-expand-region'
+Plug 'terryma/vim-expand-region'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim plugin that defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts, etc 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'michaeljsmith/vim-indent-object'
+Plug 'michaeljsmith/vim-indent-object'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => precision color scheme for multiple applications (terminal, vim, etc.) with both dark/light modes 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Open file under cursor when pressing gf 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'amix/open_file_under_cursor.vim'
+Plug 'amix/open_file_under_cursor.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => syntax highlighting and filetype plugins for Markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Brings physics-based smooth scrolling to the Vim world!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'yuttie/comfortable-motion.vim'
+Plug 'yuttie/comfortable-motion.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Flake8 plugin for Vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim plugin, insert or delete brackets, parens, quotes in pair
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim plugin for Nginx
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'chr4/nginx.vim'
+Plug 'chr4/nginx.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Toggles between hybrid and absolute line numbers automatically
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Initialize plugin system
+call plug#end()
 
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
@@ -269,6 +267,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
+let g:go_def_mode = 'gopls'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
