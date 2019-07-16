@@ -145,9 +145,9 @@ map <leader>r :MRU<CR>
 """"""""""""""""""""""""""""""
 " => LeaderF
 """"""""""""""""""""""""""""""
-let g:Lf_ShortcutF = '<c-p>'
+let g:Lf_ShortcutF = '<c-i>'
 " find functions
-noremap <Leader>ff :LeaderfFunctionAll<cr>
+noremap <Leader>ff :LeaderfFunction<cr>
 " find buffer
 noremap <Leader>fb :LeaderfBuffer<cr>
 " find tags
