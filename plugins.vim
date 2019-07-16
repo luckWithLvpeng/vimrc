@@ -276,7 +276,7 @@ let g:go_def_mode = 'gopls'
 let g:go_info_mode= 'gopls'
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
-"let g:go_def_mapping_enabled = 0
+let g:go_def_mapping_enabled = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -372,6 +372,7 @@ nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> <c-]> <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
