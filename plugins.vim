@@ -1,3 +1,5 @@
+" 复制到系统剪贴板
+noremap <Leader>y "*y
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
