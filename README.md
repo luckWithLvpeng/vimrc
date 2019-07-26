@@ -7,7 +7,7 @@
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   # clone 
-  git clone git@github.com:float90/vimrc.git ~/.vim/vimrc
+  git clone git@github.com:luckWithLvpeng/vimrc.git ~/.vim/vimrc
   # creat .vimrc
   ln -s ~/.vim/vimrc/vimrc.vim ~/.vimrc
   #vim command

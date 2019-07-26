@@ -102,7 +102,7 @@ Plug 'tpope/vim-markdown'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Brings physics-based smooth scrolling to the Vim world!
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'yuttie/comfortable-motion.vim'
+"Plug 'yuttie/comfortable-motion.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Flake8 plugin for Vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
