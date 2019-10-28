@@ -2,20 +2,52 @@
     "languageserver": {
         "golang": {
             "command": "gopls",
-            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-            "trace.server": "verbose",
-            "filetypes": ["go"]
+            "rootPatterns": [
+                "go.mod"
+            ],
+            "filetypes": [
+                "go"
+            ]
         },
         "bash": {
             "command": "bash-language-server",
-            "args": ["start"],
-            "filetypes": ["sh"],
-            "ignoredRootPaths": ["~"]
+            "args": [
+                "start"
+            ],
+            "filetypes": [
+                "sh"
+            ],
+            "ignoredRootPaths": [
+                "~"
+            ]
+        },
+        "dart": {
+            "command": "dart",
+            "args": [
+                "/usr/local/opt/dart/libexec/bin/snapshots/analysis_server.dart.snapshot",
+                "--lsp"
+            ],
+            "filetypes": [
+                "dart"
+            ],
+            "disableDynamicRegister": true,
+            "trace.server": "verbose"
         },
         "ccls": {
             "command": "ccls",
-            "filetypes": ["c", "cpp", "objc", "objcpp"],
-            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "filetypes": [
+                "c",
+                "cpp",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
             "initializationOptions": {
                 "cache": {
                     "directory": "/tmp/ccls"
