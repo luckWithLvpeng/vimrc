@@ -7,28 +7,10 @@ call plug#begin('~/.vim/bundle')
 " => let Vundle manage Vundle, required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'VundleVim/Vundle.vim'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Buffer Explorer / Browser
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'vim-scripts/bufexplorer.zip'
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin to manage Most Recently Used (MRU) files 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'vim-scripts/mru.vim'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => A code-completion engine for Vim 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'ycm-core/YouCompleteMe'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Distraction-free writing 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'junegunn/goyo.vim'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => A Vim extension that emulates iA Writer environment when editing Markdown, reStructuredText or text files 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'amix/vim-zenroom2'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim plugin for the_silver_searcher, 'ag' 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,7 +22,7 @@ Plug 'Yggdroot/LeaderF'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A tree explorer plugin for vim. 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -49,14 +31,6 @@ Plug 'scrooloose/nerdtree'
 " => A plugin of NERDTree showing git status
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'Xuyuanp/nerdtree-git-plugin'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => True Sublime Text style multiple selections for Vim 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'terryma/vim-multiple-cursors'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => surround.vim: quoting/parenthesizing made simple  
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tpope/vim-surround'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => A light and configurable statusline/tabline plugin for Vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,10 +43,6 @@ Plug 'maximbaz/lightline-ale'
 " => Go development plugin for Vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'fatih/vim-go'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Check syntax in Vim asynchronously and fix files, with Language Server Protocol (LSP) support 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Plug 'w0rp/ale'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => commentary.vim 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -106,17 +76,9 @@ Plug 'tpope/vim-markdown'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'nvie/vim-flake8'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vim plugin, insert or delete brackets, parens, quotes in pair
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'jiangmiao/auto-pairs'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim plugin for Nginx
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'chr4/nginx.vim'
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => toggles between hybrid and absolute line numbers automatically
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+"Plug 'chr4/nginx.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -185,17 +147,11 @@ let g:tagbar_type_go = {
     \ }
 
 
-""""""""""""""""""""""""""""""
-" => ZenCoding
-""""""""""""""""""""""""""""""
-" Enable all functions in all modes
-let g:user_zen_mode='a'
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
@@ -204,31 +160,6 @@ let NERDTreeShowBookmarks=1
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => vim-multiple-cursors
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:multi_cursor_use_default_mapping=0
-
-" Default mapping
-let g:multi_cursor_start_word_key      = '<C-s>'
-let g:multi_cursor_select_all_word_key = '<A-s>'
-let g:multi_cursor_start_key           = 'g<C-s>'
-let g:multi_cursor_select_all_key      = 'g<A-s>'
-let g:multi_cursor_next_key            = '<C-s>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => surround.vim config
-" Annotate strings with gettext 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vmap Si S(i_<esc>f)
-au FileType mako vmap Si S"i${ _(<esc>2f"a) }<esc>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => lightline
@@ -260,23 +191,15 @@ let g:lightline = {
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Vimroom
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:goyo_width=100
-let g:goyo_margin_top = 2
-let g:goyo_margin_bottom = 2
-nnoremap <silent> <leader>z :Goyo<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = 'goimports'
 let g:go_def_mode = 'gopls'
-let g:go_info_mode= 'gopls'
+"let g:go_info_mode= 'gopls'
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
+"let g:go_def_mapping_enabled = 0
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -288,48 +211,6 @@ syntax on
 set background=dark
 colorscheme PaperColor
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => ale Syntastic (syntax checker)
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:ale_linters = {
-" \   'javascript': ['jshint'],
-" \   'python': ['flake8'],
-" \   'go': ['go', 'golint', 'errcheck']
-" \}
-
-" nmap <silent> <leader>a <Plug>(ale_next_wrap)
-
-" " Disabling highlighting
-" let g:ale_set_highlights = 0
-
-" let g:ale_sign_column_always = 0
-" " Only run linting when saving the file
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_insert_leave = 0
-" let g:ale_lint_on_enter = 0
-" let g:ale_lint_on_save = 1
-
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => YouCompleteMe settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:ycm_min_num_of_chars_for_completion=1
-" let g:ycm_cache_omnifunc=1
-" let g:ycm_seed_identifiers_with_syntax=1
-" let g:ycm_complete_in_comments = 1
-" let g:ycm_complete_in_strings = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_python_binary_path = 'python3'
-" let g:ycm_show_diagnostics_ui = 0
-" let g:ycm_global_ycm_extra_conf = '$HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-
-" Vim's autocomplete is excruciatingly slow
-" http://stackoverflow.com/questions/2169645/vims-autocomplete-is-excruciatingly-slow
-"set complete-=i
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => jeffkreeftmeijer/vim-numbertoggle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -340,15 +221,29 @@ set number relativenumber
 " => neoclide/coc.nvim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " if hidden is not set, TextEdit might fail.
+"
+"autocmd CursorHold * silent call CocActionAsync('highlight')
 set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
 " Better display for messages
 set cmdheight=2
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
-" always show signcolumns
-set signcolumn=yes
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
@@ -366,6 +261,15 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
 " Use `[c` and `]c` to navigate diagnostics
 nmap <silent> [c <Plug>(coc-diagnostic-prev)
 nmap <silent> ]c <Plug>(coc-diagnostic-next)
@@ -377,34 +281,93 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use U to show documentation in preview window
-nnoremap <silent> U :call <SID>show_documentation()<CR>
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-vmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-" Show all diagnostics
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Use CTRL-S for selections ranges.
+" Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
+nmap <silent> <C-s> <Plug>(coc-range-select)
+xmap <silent> <C-s> <Plug>(coc-range-select)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Mappings using CoCList:
+" Show all diagnostics.
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
+" Manage extensions.
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
+" Show commands.
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
+" Find symbol of current document.
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
+" Search workspace symbols.
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
+" Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-
-
 
 
 
